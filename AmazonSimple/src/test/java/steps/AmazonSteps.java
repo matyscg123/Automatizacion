@@ -3,10 +3,9 @@ package steps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.junit.platform.commons.function.Try;
 import page.AmazonPage;
 
-import java.util.NoSuchElementException;
+
 
 public class AmazonSteps  {
     AmazonPage amazon = new AmazonPage();

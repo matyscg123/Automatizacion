@@ -1,6 +1,6 @@
 package page;
 
-import org.junit.Assert;
+
 
 public class AmazonPage extends BasePage{
     private  String textToSearch = "twotabsearchtextbox";
@@ -30,7 +30,5 @@ public class AmazonPage extends BasePage{
 
      public void addToCard(){
         clickElementById(buttonAddToCard);
-        //asert para validar que si se halla agregado al carrito
-        // Assert.assertEquals("Agregado al carrito");
      }
 }
