@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="try the principal funcionality" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-09T17:22:17" hostname="MATEO-PC" time="16.505">
+  <properties/>
+  <testcase name="select the flights, the dates, the amoungt of passengers and the price most economic." classname="try the principal funcionality" time="16.505"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 8895
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1668014540.575][WARNING]: This version of ChromeDriver has not been tested with Chrome version 107.
+nov 09, 2022 12:22:20 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+ADVERTENCIA: Unable to find an exact match for CDP version 107, so returning the closest version found: 104
+]]></system-err>
+</testsuite>
