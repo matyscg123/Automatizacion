@@ -4,14 +4,13 @@ import java.text.ParseException;
 
 public class PageViva extends BasePage {
 
-    private String btnCokies="//button[normalize-space()='Aceptar']";//xpath relativo
-    private String textBoxOrig="/html/body/demo-root/demo-home-layout/demo-search-page/div/div/ultra-flight-search-multi/div[1]/div/ultra-trip-search/div/div/ultra-station-select[1]/div/div/input";
-    private String firstOptionOrig="//body//demo-root//li[2]";
-    private String textBoxDest="/html/body/demo-root/demo-home-layout/demo-search-page/div/div/ultra-flight-search-multi/div[1]/div/ultra-trip-search/div/div/ultra-station-select[2]/div[1]/div/input";
+    private String btnCokies="//button[normalize-space()='Aceptar']";
+    private String textBoxOrig="//ultra-station-select[1]/div/div/input";
+    private String textBoxDest="//ultra-station-select[2]/div[1]/div/input";
    private String firstOptionDest="//body//demo-root//li[2]";
 
-   private String dateDeparture="//body/demo-root[1]/demo-home-layout[1]/demo-search-page[1]/div[1]/div[1]/ultra-flight-search-multi[1]/div[1]/div[1]/ultra-trip-search[1]/ultra-dates-picker[1]/div[1]/div[1]";
-   private String buttonSearch="//span[@class='icon-ultra icon-ultra-logo_white icon icon-32 ng-star-inserted']";
+   private String dateDeparture="//input[@placeholder='Salida']";
+   private String buttonSearch="//button[@data-cy='searchButton']";
    private String  emptySpace="//div[@class='search-button-container rounded-corners-field']";
 
    private String buttonAmounght="//div[@aria-label='1 Guest(s). 1 Adult. 0 Child']";
@@ -19,6 +18,7 @@ public class PageViva extends BasePage {
    private String buttonAdultAmounght="//button[@aria-label='Add Adult']";
    private String buttonChildAmoungth="//button[@aria-label='Add Child']";
    private String buttonBabyAmoungth="//button[@aria-label='Añadir menor de edad']";
+   
     public PageViva() {
         super(driver);
     }
@@ -32,7 +32,7 @@ public class PageViva extends BasePage {
        findByXpath(btnCokies).click();
           if(findByXpath(textBoxOrig).isDisplayed()){
             writeByXpath(textBoxOrig,origin);
-            findByXpath(firstOptionOrig);
+            findByXpath("//span[contains(text(),'"+origin+"')]");
         }
     }
 
@@ -75,5 +75,9 @@ public class PageViva extends BasePage {
         multipleClick(baby,buttonBabyAmoungth);
         findByXpath(emptySpace).click();
         findByXpath(buttonSearch).click();
+    }
+
+    public void economicPrice() throws InterruptedException {
+        getValuePrice();
     }
 }

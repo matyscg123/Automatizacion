@@ -36,4 +36,8 @@ public class StepsViva {
         pageViva.amouth(adulto,nino,bebe);
     }
 
+    @And("^search the most economic price and select$")
+    public void economicPrice() throws InterruptedException, ParseException {
+        pageViva.economicPrice();
+    }
 }

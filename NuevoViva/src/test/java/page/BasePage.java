@@ -12,9 +12,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
+import java.util.*;
+
+
 
 public class BasePage {
     protected static WebDriver driver;
@@ -37,119 +37,138 @@ public class BasePage {
         BasePage.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
-    public void navigateTo(String url){
+
+    public void navigateTo(String url) {
         driver.get(url);
     }
-    public void closeBrowser(){
+
+    public void closeBrowser() {
         driver.quit();
     }
-    public WebElement findById (String locator){
+
+    public WebElement findById(String locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(locator)));
     }
-    public WebElement findByClass (String locator){
+
+    public WebElement findByClass(String locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(locator)));
     }
-    public WebElement findByXpath (String locator){
+
+    public WebElement findByXpath(String locator) {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
     }
-    public void writeById(String locator,String textToWrite){
+
+    public void writeById(String locator, String textToWrite) {
         findById(locator).clear();
         findById(locator).sendKeys(textToWrite);
     }
 
-    public void writeByXpath(String locator,String textToWrite){
+    public void writeByXpath(String locator, String textToWrite) {
         findByXpath(locator).clear();
         findByXpath(locator).sendKeys(textToWrite);
     }
+
     public void clickElementId(String locator) {
         findById(locator).click();
     }
+
     public void clickElementClass(String locator) {
-       findByClass(locator).click();
+        findByClass(locator).click();
     }
+
     public void clickElementXpath(String locator) {
         findByXpath(locator).click();
     }
-    public boolean elementIsDisplayed(String locator){
-        return  findByXpath(locator).isDisplayed();
+
+    public boolean elementIsDisplayed(String locator) {
+        return findByXpath(locator).isDisplayed();
     }
-    public void goToLinkText(String linkText){
+
+    public void goToLinkText(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
     }
-    public String dayOfTheWeekCalendar(String day,String month,String year) throws ParseException {
+
+    public String dayOfTheWeekCalendar(String day, String month, String year) throws ParseException {
 
         String inputDateStr = String.format("%s/%s/%s", day, month, year);
         Date inputDate = new SimpleDateFormat("dd/MM/yyyy").parse(inputDateStr);
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(inputDate);
         String dayOfWeek = calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.US).toUpperCase();
-        if(dayOfWeek.equals("MONDAY")){
-            dayOfWeek="lunes";
+        if (dayOfWeek.equals("MONDAY")) {
+            dayOfWeek = "lunes";
         }
-        if(dayOfWeek.equals("TUESDAY")){
-            dayOfWeek="martes";
+        if (dayOfWeek.equals("TUESDAY")) {
+            dayOfWeek = "martes";
         }
-        if (dayOfWeek.equals("WEDNESDAY")){
-            dayOfWeek="mi\u00e9rcoles";
+        if (dayOfWeek.equals("WEDNESDAY")) {
+            dayOfWeek = "mi\u00e9rcoles";
         }
-        if (dayOfWeek.equals("THURSDAY")){
-            dayOfWeek="jueves";
+        if (dayOfWeek.equals("THURSDAY")) {
+            dayOfWeek = "jueves";
         }
-        if (dayOfWeek.equals("FRIDAY")){
-            dayOfWeek="viernes";
+        if (dayOfWeek.equals("FRIDAY")) {
+            dayOfWeek = "viernes";
         }
-        if (dayOfWeek.equals("SATURDAY")){
-            dayOfWeek="s\u00e1bado";
+        if (dayOfWeek.equals("SATURDAY")) {
+            dayOfWeek = "s\u00e1bado";
         }
-        if (dayOfWeek.equals("SUNDAY")){
-            dayOfWeek="domingo";
+        if (dayOfWeek.equals("SUNDAY")) {
+            dayOfWeek = "domingo";
         }
         return dayOfWeek;
     }
-    public String month(String month){
-        String monthSpanish="";
-        if(month.equals("1")){
-            monthSpanish="enero";
+
+    public String month(String month) {
+        String monthSpanish = "";
+        if (month.equals("1")) {
+            monthSpanish = "enero";
         }
-        if(month.equals("2")){
-            monthSpanish="febrero";
+        if (month.equals("2")) {
+            monthSpanish = "febrero";
         }
-        if(month.equals("3")){
-            monthSpanish="marzo";
+        if (month.equals("3")) {
+            monthSpanish = "marzo";
         }
-        if(month.equals("4")){
-            monthSpanish="abril";
+        if (month.equals("4")) {
+            monthSpanish = "abril";
         }
-        if(month.equals("5")){
-            monthSpanish="mayo";
+        if (month.equals("5")) {
+            monthSpanish = "mayo";
         }
-        if(month.equals("6")){
-            monthSpanish="junio";
+        if (month.equals("6")) {
+            monthSpanish = "junio";
         }
-        if(month.equals("7")){
-            monthSpanish="julio";
+        if (month.equals("7")) {
+            monthSpanish = "julio";
         }
-        if(month.equals("8")){
-            monthSpanish="agosto";
+        if (month.equals("8")) {
+            monthSpanish = "agosto";
         }
-        if(month.equals("9")){
-            monthSpanish="septiembre";
+        if (month.equals("9")) {
+            monthSpanish = "septiembre";
         }
-        if(month.equals("10")){
-            monthSpanish="octubre";
+        if (month.equals("10")) {
+            monthSpanish = "octubre";
         }
-        if(month.equals("11")){
-            monthSpanish="noviembre";
+        if (month.equals("11")) {
+            monthSpanish = "noviembre";
         }
-        if(month.equals("12")){
-            monthSpanish="diciembre";
+        if (month.equals("12")) {
+            monthSpanish = "diciembre";
         }
         return monthSpanish;
     }
-    public void multipleClick(int amoungth, String locator){
-        for(int i=0;i<amoungth;i++){
+
+    public void multipleClick(int amoungth, String locator) {
+        for (int i = 0; i < amoungth; i++) {
             findByXpath(locator).click();
         }
     }
-}
 
+    public void getValuePrice() throws InterruptedException {
+
+        //div[@class='fare-wrapper']/div/div[contains(text(),'COP')]
+    }
+
+}

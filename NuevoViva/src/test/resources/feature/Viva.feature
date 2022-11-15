@@ -8,9 +8,10 @@
       And select departure date <DayD> / <MonthD> / <YearD>
       And select income date <DayI> / <MonthI> / <YearI>
       And select the amoungth of <Adult> / <Child> / <Baby>
+      And search the most economic price and select
       Examples:
 
       |Origin||Departure|   |DayD||MonthD||YearD||DayI||MonthI||YearI||Adult|Child||Baby|
-      |Cartagena||Medellin| |24  | |11   ||2022|  |10  ||12   | |2022| | 2   |   2 || 0  |
+      |Medellin||Bogota| |15  | |11   ||2022|  |18  ||11   | |2022| | 2   |   2 || 0  |
 
 

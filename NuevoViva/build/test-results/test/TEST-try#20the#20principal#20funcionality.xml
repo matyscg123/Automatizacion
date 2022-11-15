@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="try the principal funcionality" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-09T17:22:17" hostname="MATEO-PC" time="16.505">
+<testsuite name="try the principal funcionality" tests="1" skipped="0" failures="1" errors="0" timestamp="2022-11-15T15:12:33" hostname="MATEO-PC" time="28.746">
   <properties/>
-  <testcase name="select the flights, the dates, the amoungt of passengers and the price most economic." classname="try the principal funcionality" time="16.505"/>
+  <testcase name="select the flights, the dates, the amoungt of passengers and the price most economic." classname="try the principal funcionality" time="28.746">
+    <failure message="org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: /html/body/demo-root/demo-booking-layout/demo-select-page/ultra-flight-select-multi/ultra-journey-select-layout/div[1]/div/div/div/div/navitaire-digital-ngfor-sort-animation-provider/ultra-availability-journey[1]/div/div[1]/ultra-flight-details/div[1]/div[1]/div/div/div (tried for 5 second(s) with 500 milliseconds interval)&#10;Build info: version: '4.5.3', revision: '4b786a1e430'&#10;System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_352'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\matys\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56605}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56605/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: d26c3a0392b4fb4d1e2eecae522c1fab" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: /html/body/demo-root/demo-booking-layout/demo-select-page/ultra-flight-select-multi/ultra-journey-select-layout/div[1]/div/div/div/div/navitaire-digital-ngfor-sort-animation-provider/ultra-availability-journey[1]/div/div[1]/ultra-flight-details/div[1]/div[1]/div/div/div (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.5.3', revision: '4b786a1e430'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_352'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.107, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\matys\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56605}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56605/devtoo..., se:cdpVersion: 107.0.5304.107, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d26c3a0392b4fb4d1e2eecae522c1fab
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at page.BasePage.findByXpath(BasePage.java:58)
+	at page.BasePage.getValuePrice(BasePage.java:172)
+	at page.PageViva.economicPrice(PageViva.java:82)
+	at steps.StepsViva.economicPrice(StepsViva.java:41)
+	at ✽.search the most economic price and select(file:///C:/Users/matys/OneDrive/Documentos/Aprendizaje%20personal/NuevoViva/src/test/resources/feature/Viva.feature:11)
+</failure>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Starting ChromeDriver 106.0.5249.61 (511755355844955cd3e264779baf0dd38212a4d0-refs/branch-heads/5249@{#569}) on port 8895
+Starting ChromeDriver 107.0.5304.62 (1eec40d3a5764881c92085aaee66d25075c159aa-refs/branch-heads/5304@{#942}) on port 41592
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1668014540.575][WARNING]: This version of ChromeDriver has not been tested with Chrome version 107.
-nov 09, 2022 12:22:20 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+nov 15, 2022 10:12:37 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 ADVERTENCIA: Unable to find an exact match for CDP version 107, so returning the closest version found: 104
 ]]></system-err>
 </testsuite>
